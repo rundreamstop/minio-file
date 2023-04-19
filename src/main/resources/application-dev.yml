@@ -1,0 +1,6 @@
+# Minio配置
+minio:
+  url: http://10.12.3.131:9000
+  accessKey: oiVu9azSuv79y5WUwfQO
+  secretKey: 1TuuJOanJ7WaYq4pUUPeZ3SIciT3CgQq
+  bucketName: rundreams-test

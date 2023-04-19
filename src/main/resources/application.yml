@@ -1,0 +1,20 @@
+# Tomcat
+server:
+  port: 7900
+  # 配置最大可以上传的文件大小
+  tomcat:
+    max-http-form-post-size: 800MB
+
+# Spring
+spring: 
+  application:
+    # 应用名称
+    name: minio-file
+  profiles:
+    # 环境配置
+    active: dev
+  servlet:
+    # 配置文件限制大小
+    multipart:
+      max-file-size: 500MB
+      max-request-size: 800MB

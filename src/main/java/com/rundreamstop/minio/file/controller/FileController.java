@@ -6,6 +6,7 @@ import com.rundreamstop.minio.file.service.RunMinioFileService;
 import com.rundreamstop.minio.file.utils.FileUtils;
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.web.bind.annotation.DeleteMapping;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RestController;
 import org.springframework.web.multipart.MultipartFile;
@@ -36,6 +37,16 @@ public class FileController {
             return R.ok(file1);
         } catch (Exception e) {
             log.error("上传文件失败", e);
+            return R.fail(e.getMessage());
+        }
+    }
+
+    @DeleteMapping(value = "deleteFile")
+    public R deleteFile(String fileName) {
+        try {
+            return fileService.deleteFile(fileName);
+        } catch (Exception e) {
+            log.error("删除文件失败", e);
             return R.fail(e.getMessage());
         }
     }
